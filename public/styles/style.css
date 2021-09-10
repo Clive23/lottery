@@ -1,0 +1,252 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-1,
+.bg-2 {
+  position: fixed;
+}
+
+.bg-1 {
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/Undian\ Earn\ BG1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+}
+
+.bg-2 {
+  width: 100%;
+  height: 100%;
+  background: url("/public/images//Undian\ Earn\ BG2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  position: relative;
+}
+
+#tokenomy-logo img {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+#festival-title img {
+  width: 90%;
+  margin-bottom: 0rem;
+}
+
+.box {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  position: relative;
+  -webkit-box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box h1 {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #454141;
+  word-wrap: break-word;
+}
+
+.box button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  border: none;
+  outline: none;
+  letter-spacing: 1px;
+  height: 150px;
+  width: 150px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 100ms ease-in-out;
+}
+
+.box button:active {
+  margin-bottom: -0.5rem;
+}
+
+.box button#button-start {
+  display: block;
+  background-color: #48bef0;
+  box-shadow: 0px 0px 20px rgba(46, 180, 229, 0.4);
+}
+.box button#button-showWinners {
+  display: none;
+  background-color: #48bef0;
+  box-shadow: 0px 0px 20px rgba(46, 180, 229, 0.4);
+  height: auto !important;
+  width: auto !important;
+  padding: 12px 48px;
+}
+
+.box button#button-stop {
+  display: none;
+  background-color: #f04848;
+  box-shadow: 0px 0px 20px rgba(229, 46, 46, 0.4);
+}
+
+.box button#button-next {
+  display: none;
+  background-color: #f09648;
+  box-shadow: 0px 0px 20px rgba(229, 147, 46, 0.4);
+}
+
+#main-box {
+  max-width: 60%;
+}
+
+.box #all-winners {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.box #all-winners h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.box #all-winners div {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* margin-bottom: 1rem; */
+  padding: 0.5rem 0;
+}
+
+.box #all-winners div p {
+  width: 100%;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.box #all-winners img {
+  width: 60px;
+  margin-right: 150px;
+}
+
+#prizes-box {
+  position: absolute;
+  left: -100px;
+  bottom: 10%;
+  animation: MoveUpDown 2s ease-in-out infinite;
+}
+
+#prizes-box h1 {
+  color: #313131;
+  font-size: 2rem;
+  transform: rotate(-13.5deg) translateX(-166px) translateY(23px)
+    translateZ(74px);
+  display: none;
+}
+
+#prizes-box img {
+  width: 200px;
+  transform: rotate(-15deg);
+}
+
+/* keyframes */
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 5%;
+  }
+
+  50% {
+    bottom: -5%;
+  }
+}
+
+.price-img {
+  position: fixed;
+}
+
+.watch {
+  left: 2rem;
+  bottom: 250px;
+  transform: rotate(35deg);
+}
+
+.ipad-1 {
+  left: 1rem;
+  bottom: -200px;
+  transform: rotate(25deg);
+}
+
+.ipad-2 {
+  right: -150px;
+  top: -50px;
+  transform: rotate(-25deg);
+}
+
+.airpod {
+  right: 100px;
+  top: 250px;
+  transform: rotate(-15deg);
+}
+
+.list-top20 {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-top20 .item {
+  margin-left: 2rem;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+  border-bottom: 1px solid #eaeaea;
+  padding: 8px 0;
+}
+
+.list-top20 .item div {
+  flex: 1;
+  text-align: start;
+}
+
+.gotomain {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  color: #48bef0;
+  cursor: pointer;
+}
