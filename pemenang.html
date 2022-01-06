@@ -11,85 +11,123 @@
       rel="stylesheet"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
     <link rel="stylesheet" href="/public/styles/reset.css" />
     <link rel="stylesheet" href="/public/styles/style.css" />
   </head>
   <body>
-    <div class="bg-1"></div>
-    <div class="bg-2"></div>
+    <div class="coffeti-1"></div>
+    <div class="coffeti-2"></div>
     <main>
-      <div class="right">
+      <div class="right-winners">
         <div id="tokenomy-logo">
-          <img src="/public/images/logo_tokenomy_blue_new.svg" />
+          <img src="/public/images/logo_tokenomy_blue_new.svg" width="200" />
         </div>
+        <img
+          src="/public/images/Festival_Tokenomy_Earn.png"
+          width="500"
+          style="margin-bottom: 1rem"
+        />
 
-        <div class="list-top20" id="list-top20"></div>
-      </div>
-
-      <div class="price-img watch">
-        <img src="/public/earn-festival/watch.png" width="200" />
-      </div>
-      <div class="price-img ipad-1">
-        <img src="/public/earn-festival/ipad-1.png" width="400" />
-      </div>
-      <div class="price-img ipad-2">
-        <img src="/public/earn-festival/ipad-2.png" width="400" />
-      </div>
-      <div class="price-img airpod">
-        <img src="/public/earn-festival/airpod.png" width="200" />
+        <div class="all-winners-wrapper">
+          <div id="all-winners"></div>
+        </div>
       </div>
 
       <a href="/index.html" class="gotomain">Back to Rolling ></a>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+      let confettiSecond = confetti;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+
     <footer>
       <script>
-        let top20 = [
-          {
-            name: "Sumardi",
-            email: "neetsu***@gmail.com",
-            pemenang: "Pemenang earn fest 1",
-          },
-          {
-            name: "Ari I.",
-            email: "ari***@yahoo.com",
-            pemenang: "Pemenang earn fest 1",
-          },
-          {
-            name: "Alwyn",
-            email: "alw***@yahoo.com",
-            pemenang: "Pemenang earn fest 1",
-          },
-          {
-            name: "Andrey T.",
-            email: "andrey.tan***@yahoo.com",
-            pemenang: "Pemenang trading competition 1",
-          },
+        let roundWinners = [
+          { name: "Hendri", email: "he*****ber@gmail.com" },
+          { name: "Daniel", email: "gu*****el@gmail.com" },
+          { name: "Dimas W", email: "as*****snu@gmail.com" },
+          { name: "Edwin", email: "eru*****t69@yahoo.co.id" },
+          { name: "S. Elim", email: "leo*****se@gmail.com" },
+          { name: "Kurniady W.", email: "ku*****rno@gmail.com" },
         ];
 
-        function generateList() {
-          let container = document.getElementById("list-top20");
+        let roundPrizes = [
+          { name: "Smartwatch Amazfit", logo: "/public/images/Prizes/jam.png" },
+          {
+            name: "Headphone Sony",
+            logo: "/public/images/Prizes/headphone.png",
+          },
+          { name: "Ipad 9 2021", logo: "/public/images/Prizes/ipad.png" },
+          {
+            name: "Harman Kardon Onyx 5",
+            logo: "/public/images/Prizes/speaker.png",
+          },
+          { name: "Samsung Smart TV", logo: "/public/images/Prizes/tv.png" },
+          { name: "New Honda Genio", logo: "/public/images/Prizes/motor.png" },
+        ];
 
-          for (let i = 0; i < top20.length; i++) {
-            container.insertAdjacentHTML(
+        const allWinnersEl = document.getElementById("all-winners");
+        function showWinners() {
+          for (let i = roundPrizes.length - 1; i >= 0; i--) {
+            allWinnersEl.insertAdjacentHTML(
               "beforeend",
               `
-            <div class="item">
-              <div>${top20[i].name}</div>
-              <div>${top20[i].email}</div>
-              <div>${top20[i].pemenang}</div>
-            </div>
-            `
+                    <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 1rem">
+                      <img src="${roundPrizes[i].logo}" width="80" style="margin-right: 3rem"/>
+                      <div style="display: flex; flex-direction: column; text-align: left">
+                        <p style="font-weight: bold; font-size: 1.5rem;">${roundWinners[i].name}</p>
+                        <p style="font-size: 15px; margin-top: 5px;">${roundWinners[i].email}</p>
+                      </div>
+                    </div>
+                `
             );
           }
         }
 
-        generateList();
+        showWinners();
+
+        function duar() {
+          var duration = 600 * 1000;
+          var animationEnd = Date.now() + duration;
+          var skew = 0;
+
+          var end = Date.now() + 600 * 1000;
+          var colors = ["#1EAFED", "#ffffff"];
+
+          function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+          }
+
+          (function frame() {
+            var timeLeft = animationEnd - Date.now();
+            var ticks = Math.max(200, 500 * (timeLeft / duration));
+            skew = Math.max(0.8, skew - 0.001);
+
+            confettiSecond({
+              particleCount: 2,
+              startVelocity: 0,
+              ticks: ticks,
+              origin: {
+                x: Math.random(),
+                y: Math.random() * skew - 0.2,
+              },
+              // colors: colors,
+              gravity: randomInRange(0.4, 0.6),
+              scalar: randomInRange(0.4, 1),
+              drift: randomInRange(-0.4, 0.2),
+              spread: 100,
+            });
+
+            if (timeLeft > 0) {
+              requestAnimationFrame(frame);
+            }
+          })();
+        }
+
+        duar();
       </script>
     </footer>
   </body>

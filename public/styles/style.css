@@ -9,12 +9,12 @@ body {
   overflow: hidden;
 }
 
-.bg-1,
-.bg-2 {
+.coffeti-1,
+.coffeti-2 {
   position: fixed;
 }
 
-.bg-1 {
+.coffeti-1 {
   width: 100%;
   height: 100%;
   background: url("/public/images/Undian\ Earn\ BG1.png");
@@ -23,7 +23,7 @@ body {
   bottom: 0;
 }
 
-.bg-2 {
+.coffeti-2 {
   width: 100%;
   height: 100%;
   background: url("/public/images//Undian\ Earn\ BG2.png");
@@ -32,32 +32,66 @@ body {
 }
 
 main {
-  margin-top: 1rem;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: row;
   position: relative;
+  position: absolute;
+  top: 0;
+}
+
+.left {
+  flex: 45%;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.left img {
+  position: absolute;
+  bottom: 0;
+}
+
+.left img:last-of-type {
+  z-index: -1;
+  position: absolute;
+  bottom: -40px;
 }
 
 .right {
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 50%;
+  padding: 0 5rem;
   position: relative;
 }
 
-#tokenomy-logo img {
-  width: 80%;
-  margin-bottom: 1rem;
+.right-winners {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 5rem;
+  position: relative;
+}
+
+#tokenomy-logo {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
 }
 
 #festival-title img {
-  width: 90%;
-  margin-bottom: 0rem;
+  margin-bottom: 2rem;
 }
 
 .box {
@@ -89,11 +123,11 @@ main {
   border: none;
   outline: none;
   letter-spacing: 1px;
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   border-radius: 9999px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 15px;
   transition: all 100ms ease-in-out;
 }
 
@@ -249,4 +283,38 @@ main {
   right: 2rem;
   color: #48bef0;
   cursor: pointer;
+}
+
+.background-mc {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: url("/public/images/bg/background\ MC.jpg");
+  background-size: cover;
+  background-position-y: -50px;
+  z-index: -1;
+}
+
+.btn {
+  position: fixed;
+  outline: none;
+  padding: 10px 24px;
+  z-index: 1000;
+  background-color: #48bef0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  bottom: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.all-winners-wrapper {
+  display: flex;
 }
