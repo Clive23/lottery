@@ -430,8 +430,6 @@
         // next round
         function nextRound() {
           if (status === "finished") {
-            duar();
-            showWinners();
             return;
           }
           winnerNameEl.innerHTML = `<span style="font-size: 2rem">Winner of ${roundPrizes[round].name}</span>`;
