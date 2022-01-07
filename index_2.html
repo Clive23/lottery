@@ -45,7 +45,7 @@
             <button onclick="exec()" id="button-start">Roll</button>
             <button onclick="exec()" id="button-stop">Stop</button>
             <button onclick="exec()" id="button-next">Next round</button>
-            <button onclick="exec()" id="button-showWinners">
+            <button onclick="goToWinnerList()" id="button-showWinners">
               List of Winners
             </button>
           </div>
@@ -440,9 +440,8 @@
         }
 
         function stop() {
-          if (round === 4) {
+          if (round === roundPrizes.length) {
             status = "finished";
-            window.location.href = window.location.origin + "/pemenang.html";
             buttonStartEl.style.display = "none";
             buttonStopEl.style.display = "none";
             buttonNextEl.style.display = "none";
@@ -459,7 +458,7 @@
         function start() {
           status = "started";
           winnerNameEl.classList.remove("animate__bounceIn");
-          if (round === 4) {
+          if (round === roundPrizes.length + 1) {
             showConfetti();
             stop();
             status = "finished";
@@ -554,6 +553,10 @@
               checkStatus();
               break;
           }
+        }
+
+        function goToWinnerList() {
+          window.location.href = window.location.origin + "/pemenang.html";
         }
       </script>
     </footer>
