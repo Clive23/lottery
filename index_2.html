@@ -440,7 +440,10 @@
         }
 
         function stop() {
-          if (round === roundPrizes.length) {
+          if (round === roundPrizes.length - 1) {
+            buttonStartEl.innerHTML = "Open";
+            status = "stopped";
+          } else if (round === roundPrizes.length) {
             status = "finished";
             buttonStartEl.style.display = "none";
             buttonStopEl.style.display = "none";
@@ -458,7 +461,7 @@
         function start() {
           status = "started";
           winnerNameEl.classList.remove("animate__bounceIn");
-          if (round === roundPrizes.length + 1) {
+          if (round === roundPrizes.length) {
             showConfetti();
             stop();
             status = "finished";
