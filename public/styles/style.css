@@ -353,7 +353,7 @@ div #all-winners img {
   right: 0;
   height: 100vh;
   width: 100vw;
-  background: url("/public/images/bg/winnerBG.jpg");
+  background: url("/public/images/bg/winner_BG.jpg");
   background-size: cover;
   background-position-y: -50px;
   z-index: -1;
