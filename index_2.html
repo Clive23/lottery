@@ -443,8 +443,8 @@
           confettiSecond.reset();
           status = "idle";
           round += 1;
-          currentPrizeImage.setAttribute("src", roundPrizes[round - 1].logo);
           currentPrizeImage.setAttribute("width", roundPrizes[round - 1].width);
+          currentPrizeImage.setAttribute("src", roundPrizes[round - 1].logo);
         }
 
         function stop() {
