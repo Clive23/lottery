@@ -27,12 +27,12 @@
     </div>
     <main>
       <div class="left" id="left">
-        <img id="current-prize-image" width="400" />
+        <img id="current-prize-image" />
         <img src="public/images/floor.png" width="460" />
       </div>
       <div class="right">
         <div id="festival-title">
-          <img src="/public/images/Festival_Tokenomy_Earn.png" width="500" />
+          <img src="/public/images/Earn_Ramadan.png" width="500" />
         </div>
         <div class="box">
           <div id="main-box">
@@ -315,27 +315,33 @@
 
         let round = 1;
         let roundWinners = [
-          { name: "Hendri", email: "he*****ber@gmail.com" },
-          { name: "Daniel", email: "gu*****el@gmail.com" },
-          { name: "Dimas W", email: "as*****snu@gmail.com" },
-          { name: "Edwin", email: "eru*****t69@yahoo.co.id" },
-          { name: "S. Elim", email: "leo*****se@gmail.com" },
-          { name: "Kurniady W.", email: "ku*****rno@gmail.com" },
+          { name: "Arie S.", email: "tu*****ah@gmail.com" },
+          { name: "Elyzabeth", email: "rig*****ta@gmail.com" },
+          { name: "Johan", email: "jo*****to@gmail.com" },
+          { name: "Alvin S.", email: "al*****aya@ymail.com" },
         ];
 
         let roundPrizes = [
-          { name: "Samsung Smart TV", logo: "/public/images/Prizes/tv.png" },
           {
-            name: "Harman Kardon Onyx 5",
-            logo: "/public/images/Prizes/speaker.png",
+            name: "Xiaomi Poco M3",
+            logo: "/public/images/Prizes/xiaomi_poco_m3.png",
+            width: "250",
           },
-          { name: "Ipad 9 2021", logo: "/public/images/Prizes/ipad.png" },
           {
-            name: "Headphone Sony",
-            logo: "/public/images/Prizes/headphone.png",
+            name: "Roadbike 700C FRC38",
+            logo: "/public/images/Prizes/Roadbike_700C_FRC38.png",
+            width: "400",
           },
-          { name: "Smartwatch Amazfit", logo: "/public/images/Prizes/jam.png" },
-          { name: "New Honda Genio", logo: "/public/images/Prizes/motor.png" },
+          {
+            name: "Samsung Smart TV",
+            logo: "/public/images/Prizes/samsung_smart_tv_43_inch.png",
+            width: "400",
+          },
+          {
+            name: "Macbook Air M1",
+            logo: "/public/images/Prizes/macbook_air_m1.png",
+            width: "400",
+          },
         ];
 
         let globalId;
@@ -347,6 +353,7 @@
             roundPrizes[round - 1].name
           }<span>`;
           currentPrizeImage.setAttribute("src", roundPrizes[round - 1].logo);
+          currentPrizeImage.setAttribute("width", roundPrizes[round - 1].width);
         };
 
         function showWinners() {
@@ -437,6 +444,7 @@
           status = "idle";
           round += 1;
           currentPrizeImage.setAttribute("src", roundPrizes[round - 1].logo);
+          currentPrizeImage.setAttribute("width", roundPrizes[round - 1].width);
         }
 
         function stop() {

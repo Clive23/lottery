@@ -58,10 +58,15 @@ main {
   transform: translate(0, -50%);
 }
 
+.left img:first-child {
+  top: 50%;
+  bottom: 50%;
+}
+
 .left img:last-of-type {
   z-index: -1;
   position: absolute;
-  transform: translate(0, -65%);
+  transform: translate(0, -35%);
 }
 
 .right {
@@ -193,8 +198,25 @@ main {
 }
 
 .box #all-winners img {
-  width: 60px;
   margin-right: 150px;
+  width: 100px;
+}
+
+div #all-winners img {
+  margin-right: 150px;
+  width: 100px;
+}
+
+/* this style is exist because the phone height is too large */
+#all-winners div:last-child img {
+  width: 70px;
+}
+
+#all-winners {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
 }
 
 #prizes-box {
@@ -280,8 +302,8 @@ main {
 
 .gotomain {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1rem;
+  right: 1rem;
   color: #48bef0;
   cursor: pointer;
 }
@@ -318,4 +340,21 @@ main {
 
 .all-winners-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.pemenang-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: url("/public/images/bg/winnerBG.jpg");
+  background-size: cover;
+  background-position-y: -50px;
+  z-index: -1;
 }
